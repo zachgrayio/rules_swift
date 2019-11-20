@@ -47,13 +47,19 @@ def swift_rules_dependencies():
         sha256 = "1dde365491125a3db70731e25658dfdd3bc5dbdfd11b840b3e987ecf043c7ca0",
     )
 
+#    _maybe(
+#        http_archive,
+#        name = "build_bazel_apple_support",
+#        urls = [
+#            "https://github.com/bazelbuild/apple_support/releases/download/0.7.1/apple_support.0.7.1.tar.gz",
+#        ],
+#        sha256 = "122ebf7fe7d1c8e938af6aeaee0efe788a3a2449ece5a8d6a428cb18d6f88033",
+#    )
+
     _maybe(
-        http_archive,
+        native.local_repository,
         name = "build_bazel_apple_support",
-        urls = [
-            "https://github.com/bazelbuild/apple_support/releases/download/0.7.1/apple_support.0.7.1.tar.gz",
-        ],
-        sha256 = "122ebf7fe7d1c8e938af6aeaee0efe788a3a2449ece5a8d6a428cb18d6f88033",
+        path = "../apple_support",
     )
 
     _maybe(
